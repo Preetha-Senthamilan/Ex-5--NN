@@ -1,5 +1,5 @@
-H3>ENTER YOUR NAME</H3>
-<H3>ENTER YOUR REGISTER NO.</H3>
+<H3>PREETHA.S</H3>
+<H3>212222230110</H3>
 <H3>EX. NO.5</H3>
 <H3>DATE:</H3>
 <H1 ALIGN =CENTER>Implementation of XOR  using RBF</H1>
@@ -35,11 +35,46 @@ Step 7: Plot the Input space and Hidden space of RBF NN for XOR classification.
 
 <H3>PROGRAM:</H3>
 
-Insert  your code here
+```
+def predict_matrix(point, weights):
+  gaussian_rbf_0 = gaussian_rbf(np.array (point), mu1)
+  gaussian_rbf_1 = gaussian_rbf(np.array (point), mu2)
+  A = np.array([gaussian_rbf_0, gaussian_rbf_1, 1])
+  return np.round(A.dot(weights))
 
+  x1 = np.array([0, 0, 1, 1])
+  x2 = np.array([0, 1, 0, 1])
+  ys = np.array ([0, 1, 1, 0])
+  mu1 = np.array([0, 1])
+  mu2 = np.array([1, 0])
+  w = end_to_end(x1, x2, ys, mu1, mu2)
+  print(f"Input:{np.array ([0, 0])}, Predicted: {predict_matrix(np.array([0, 0]), w)}") 
+  print(f"Input: {np.array ([0, 1])}, Predicted: {predict_matrix(np.array ([0, 1]), w)}")
+  print(f"Input: {np.array ([1, 0])}, Predicted: {predict_matrix(np.array([1, 0]), w)}")
+  print(f"Input: {np.array ([1, 1])}, Predicted: {predict_matrix(np.array([1, 1]), w)}")
+
+def predict_matrix(point, weights):
+  gaussian_rbf_0 = gaussian_rbf(np.array (point), mu1)
+  gaussian_rbf_1 = gaussian_rbf(np.array (point), mu2)
+  A = np.array([gaussian_rbf_0, gaussian_rbf_1, 1])
+  return np.round(A.dot(weights))
+
+  x1 = np.array([0, 0, 1, 1])
+  x2 = np.array([0, 1, 0, 1])
+  ys = np.array ([0, 1, 1, 0])
+  mu1 = np.array([0, 1])
+  mu2 = np.array([1, 0])
+  w = end_to_end(x1, x2, ys, mu1, mu2)
+  print(f"Input:{np.array ([0, 0])}, Predicted: {predict_matrix(np.array([0, 0]), w)}") 
+  print(f"Input: {np.array ([0, 1])}, Predicted: {predict_matrix(np.array ([0, 1]), w)}")
+  print(f"Input: {np.array ([1, 0])}, Predicted: {predict_matrix(np.array([1, 0]), w)}")
+  print(f"Input: {np.array ([1, 1])}, Predicted: {predict_matrix(np.array([1, 1]), w)}")
+
+```
 <H3>OUTPUT:</H3>
 
-Show your code here
+![image](https://github.com/Preetha-Senthamilan/Ex-5--NN/assets/119390282/cbb3d0d4-b608-44bf-b418-3e92e2dca56a)
+
 
 <H3>Result:</H3>
 Thus , a Radial Basis Function Neural Network is implemented to classify XOR data.
